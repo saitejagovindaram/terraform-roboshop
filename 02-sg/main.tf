@@ -271,7 +271,7 @@ resource "aws_vpc_security_group_ingress_rule" "catalogue-vpn" {
 resource "aws_vpc_security_group_ingress_rule" "user-web" {
   security_group_id = module.user.sg_id
   # cidr_ipv4   = "0.0.0.0/0"
-  from_port   = 80
+  from_port   = 80 #port 8080 not 80
   to_port     = 80
   ip_protocol = "tcp"
   referenced_security_group_id = module.web.sg_id
@@ -291,7 +291,7 @@ resource "aws_vpc_security_group_ingress_rule" "user-vpn" {
 resource "aws_vpc_security_group_ingress_rule" "cart-web" {
   security_group_id = module.cart.sg_id
   # cidr_ipv4   = "0.0.0.0/0"
-  from_port   = 80
+  from_port   = 80 #port 8080 not 80
   to_port     = 80
   ip_protocol = "tcp"
   referenced_security_group_id = module.web.sg_id
@@ -311,7 +311,7 @@ resource "aws_vpc_security_group_ingress_rule" "cart-vpn" {
 resource "aws_vpc_security_group_ingress_rule" "shipping-web" {
   security_group_id = module.shipping.sg_id
   # cidr_ipv4   = "0.0.0.0/0"
-  from_port   = 80
+  from_port   = 80 #port 8080 not 80
   to_port     = 80
   ip_protocol = "tcp"
   referenced_security_group_id = module.web.sg_id
@@ -331,7 +331,7 @@ resource "aws_vpc_security_group_ingress_rule" "shipping-vpn" {
 resource "aws_vpc_security_group_ingress_rule" "payments-web" {
   security_group_id = module.payments.sg_id
   # cidr_ipv4   = "0.0.0.0/0"
-  from_port   = 80
+  from_port   = 80 #port 8080 not 80
   to_port     = 80
   ip_protocol = "tcp"
   referenced_security_group_id = module.web.sg_id
